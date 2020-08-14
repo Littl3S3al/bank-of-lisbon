@@ -1,5 +1,6 @@
 // prototyping variables
 let videoSpeed = 1;
+let testing = true;
 
 
 const loadingScreen = document.querySelector('#loading');
@@ -24,7 +25,7 @@ const videoTimer = () => {
     let countdown = setInterval(() => {
         let timer = (video.duration - video.currentTime).toFixed(2)*100;
         counter.innerText = timer;
-        if(timer === 0){
+        if(timer === 0 || testing){
             secVideo.classList.add('d-none');
             clearInterval(countdown);
         }
