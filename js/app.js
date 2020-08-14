@@ -1,7 +1,7 @@
 // prototyping variables
-let videoSpeed = 10;
+let videoSpeed = 1;
 let testing = false;
-let end = 10000 * 15;
+let end = 1000 * 15;
 
 
 // variables
