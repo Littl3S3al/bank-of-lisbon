@@ -58,6 +58,20 @@
         8000
     </div>
 
+    <!-- AUDIO PLAYER -->
+    <div id="audioPlayer" class="blurredDiv">
+        <p>LISTEN</p>
+        <audio controls src="assets/DustWindow.mp3">
+            Your browser does not support the
+            <code>audio</code> element.
+        </audio>
+    </div>
+
+
+    <!-- lines -->
+    <div id="vertiLine" class="line"></div>
+    <div id="horiLine" class="line"></div>
+
 
     <!-- BODY OF THE WEBSITE -->
     <section id="body" class="container">
@@ -86,16 +100,33 @@
                 </p>
     
                 <p>
-                    <i>I ask my friend about the Bank of Lisbon. </i>He worked here in the health department on AIDS awareness campaigns in the late 90s, early 2000s. He says, ‘the building didn't figure much compared to the media work we were doing’, effectively against AIDS denialism of the government at the time’.  Windows did not open, the lifts often did not work. The basement parking was ‘useful’ but ‘reeked of sewage’. After a pause he adds,<span class="highlight">‘The MECs  occupied the 23rd floor, one of them marbled the entire floor. Maybe they liked skidding and sliding. The machinery of the air conditioning was on the 13th floor. A dusty and dirty floor, like being in the bag of a giant vacuum cleaner. It did pump warm and bad air throughout the building.’</span> He recalls scandals of misspent money in the health department. My question puts him into a bad mood, even though he remembers ‘good views to the west of the city, a purple haze hanging over Fordsburg and beyond’. And watching a solar eclipse in 2001, when it was one of the few tall buildings in the area that was not bricked up (including Luthuli House). 
+                    <i>I ask my friend about the Bank of Lisbon. </i>He worked here in the health department on AIDS awareness campaigns in the late 90s, early 2000s. He says, ‘the building didn't figure much compared to the media work we were doing’, effectively against AIDS denialism of the government at the time’.  Windows did not open, the lifts often did not work. The basement parking was ‘useful’ but ‘reeked of sewage’. After a pause he adds,<span>‘The MECs  occupied the 23rd floor, one of them marbled the entire floor. Maybe they liked skidding and sliding. The machinery of the air conditioning was on the 13th floor. A dusty and dirty floor, like being in the bag of a giant vacuum cleaner. It did pump warm and bad air throughout the building.’</span> He recalls scandals of misspent money in the health department. My question puts him into a bad mood, even though he remembers ‘good views to the west of the city, a purple haze hanging over Fordsburg and beyond’. And watching a solar eclipse in 2001, when it was one of the few tall buildings in the area that was not bricked up (including Luthuli House). 
                 </p>
     
                 <p>
-                    Later that day, he emails me about a painting he did at the time: <span class="highlight">‘The shape, lower right, is one of the health directors screaming while wearing a neck brace; then there's the lift, a confinement in which one could sample the foetid breath of fellow workers; the somewhat crushed cars represent the aforementioned basement parking. The tall grey figure represents a man I worked with who had been tortured by the police, made to stand on a brick till inevitably he fell off, for which he was beaten. He felt compelled to share this with me. The rest is too obscure to go into. Fire and implosion was too good for that building.’</span> 
+                    Later that day, he emails me about a painting he did at the time: <span>‘The shape, lower right, is one of the health directors screaming while wearing a neck brace; then there's the lift, a confinement in which one could sample the foetid breath of fellow workers; the somewhat crushed cars represent the aforementioned basement parking. The tall grey figure represents a man I worked with who had been tortured by the police, made to stand on a brick till inevitably he fell off, for which he was beaten. He felt compelled to share this with me. The rest is too obscure to go into. Fire and implosion was too good for that building.’</span> 
                 </p>
     
             </div>
         </div>
     </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="footnoteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="footnoteTitle">Footnote</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            ...
+            </div>
+        </div>
+        </div>
+    </div>
     
     <!-- bootstrap js -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -104,6 +135,7 @@
 
     <!-- custom scripts -->
     <script src="js/app.js"></script>
+    <script src="js/footnotes.js"></script>
     
 </body>
 </html>

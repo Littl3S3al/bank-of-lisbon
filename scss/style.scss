@@ -11,6 +11,9 @@ body{
     overflow-x: hidden;
     font-family: 'PT Sans', sans-serif;
 }
+h1, h2, p , .highligh{
+    transition: all 0.9s ease;
+}
 
 // general styles
 .row{
@@ -67,16 +70,6 @@ video{
 // text
 section#body{
     margin-top: 40vh;
-    h1, h2, p {
-        transition: all 0.9s ease;
-        text-shadow: 0 0 50px black; 
-        color: transparent; 
-        &:hover{
-            text-shadow: 0 0 0 black;
-            color: black;     
-            transition: all 0.9s ease; 
-        }
-    }
     h1{
         font-size: 4em;
         font-weight: 400;
@@ -86,31 +79,51 @@ section#body{
     }
     .highlight{
         font-weight: 700;
-        text-shadow: 0 0 50px $higlight; 
-        color: transparent;      
-        transition: all 0.2s ease; 
-        &:hover{
-            transition: all 0.9s ease;
-            color: $higlight;
-        }
+        color: $higlight;
     }
     sup{
         cursor: pointer;
     }
 }
 
+.blurredText{
+    transition: all 0.9s ease;
+    text-shadow: 0 0 50px black; 
+    color: transparent; 
+}
+.blurredDiv{
+    filter: blur(8px);
+}
 
-// // buttons
-// #watch button.btn, #listen button.btn{
-//     border-radius: 0 10px 10px 0;
-//     margin: 20px 0 0 0;
-// }
 
-// // audio box
-// #audio-box{
-//     position: absolute;
-//     top: 0;
-//     margin-left: 37vw;
-//     width: 25vw;
-//     background: black;
-// }
+// audio
+#audioPlayer{
+    background: rgba(0,0,0,0.6);
+    position: fixed;
+    color: white;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    border-radius: 0 20px 0 0;
+    border: 1px solid black;
+    transition: all 0.9s ease;
+}
+
+
+// lines
+// vertical line
+.line{
+    position: fixed;
+    background: black;
+    opacity: 0.4;
+}
+#vertiLine{
+    right: 25px;
+    bottom: 0px;
+    width: 1px;
+}
+#horiLine{
+    height: 1px;
+    top: 50vh;
+    left: 0;
+}
