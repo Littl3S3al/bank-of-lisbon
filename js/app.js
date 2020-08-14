@@ -1,5 +1,5 @@
 // prototyping variables
-let videoSpeed = 5;
+let videoSpeed = 1;
 
 
 const loadingScreen = document.querySelector('#loading');
