@@ -1,5 +1,5 @@
 // prototyping variables
-let videoSpeed = 1;
+let videoSpeed = 10;
 let testing = false;
 let end = 10000 * 15;
 
@@ -34,6 +34,7 @@ video.playbackRate = videoSpeed;
 const updateCounter = () => {
     counter.innerText = time;
 }
+
 // video timer function
 const videoTimer = () => {
     let countdown = setInterval(() => {
@@ -49,6 +50,7 @@ const videoTimer = () => {
 
 // reading timer function
 const reading = () => {
+    document.body.classList.remove('modal-open');
     counter.style.color = 'black';
     time = 0;
     updateCounter();
