@@ -12,6 +12,8 @@ const startbtn = document.querySelector('#startBtn');
 
 const secVideo = document.querySelector('#video');
 const video = document.querySelector('video');
+const skipBtn = document.querySelector('#skipBtn');
+let endNow = false;
 
 const counter = document.querySelector('#counter');
 
@@ -22,7 +24,8 @@ const audioContainer = document.querySelector('#audioPlayer');
 const audio = document.querySelector('audio');
 let playing = false;
 
-const paras = document.querySelectorAll('p');
+const container = document.querySelector('#body');
+const paras = container.querySelectorAll('p');
 
 
 
@@ -35,15 +38,21 @@ const updateCounter = () => {
     counter.innerText = time;
 }
 
+
+// end video function
+const endVid = (interval) => {
+    secVideo.classList.add('d-none');
+    clearInterval(interval);
+    reading();
+}
+
 // video timer function
 const videoTimer = () => {
     let countdown = setInterval(() => {
         let timer = (video.duration - video.currentTime).toFixed(2)*100;
         counter.innerText = timer;
-        if(timer === 0 || testing){
-            secVideo.classList.add('d-none');
-            clearInterval(countdown);
-            reading();
+        if(timer === 0 || testing || endNow){
+            endVid(countdown);
         }
     }, 10);
 }
@@ -52,6 +61,7 @@ const videoTimer = () => {
 const reading = () => {
     document.body.classList.remove('modal-open');
     counter.style.color = 'black';
+    container.classList.remove('d-none');
     time = 0;
     updateCounter();
     let instance = window.innerHeight/end;
@@ -76,7 +86,9 @@ const endInteraction = () => {
 
 // add blur class to all paras
 paras.forEach(para => {
-    para.classList.add('blurredText');
+    if(!para.classList.contains('clear')){
+        para.classList.add('blurredText');
+    }
 })
 
 // changing the width of the bar function
@@ -107,6 +119,12 @@ startbtn.addEventListener('click', () => {
     counter.classList.remove('d-none');
     video.play(); 
     videoTimer();
+});
+
+// skip button ends video
+skipBtn.addEventListener('click', () => {
+    endNow = true;
+    video.pause();
 })
 
 // hitting play on audio triggers line growing
@@ -125,6 +143,9 @@ audio.addEventListener('pause', () => {
 document.body.addEventListener('mouseover', (e) => {
     if(e.target.tagName === "P"){
         e.target.classList.remove('blurredText');
+    }
+    if(e.target.classList.contains('extrablurredDiv')){
+        e.target.classList.remove('extrablurredDiv');
     }
 });
 

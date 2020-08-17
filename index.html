@@ -39,7 +39,6 @@
         </div>
 
     </section>
-
     
 
     <!-- VIDEO SECTION -->
@@ -50,6 +49,7 @@
                     <source src="assets/lisbon120720.mp4" type="video/mp4">
                 </video>
             </div>
+            <button id="skipBtn" class="btn btn-danger">skip</button>
         </div>
     </section>
     
@@ -67,28 +67,28 @@
         </audio>
     </div>
 
-
-    <!-- lines -->
+    <!-- PROGRESS BARS/LINES -->
     <div id="vertiLine" class="line"></div>
     <div id="horiLine" class="line"></div>
 
-
     <!-- BODY OF THE WEBSITE -->
-    <section id="body" class="container">
+    <section id="body" class="container d-none">
         <div class="row">
             <div class="col-12 col-md-8 offset-md-3">
                 <h1 class="mb-5">8 seconds in uneven numbers</h1>
     
                 <p class="text-right">I realized the distance I had travelled to get here.<sup>1</sup></p>
+
+                <div class="imageContainer extrablurredDiv" style="background: url('assets/images/bankoflisbon_1.jpg') no-repeat center center; background-size: cover;"></div>
     
                 <h2>account of events</h2>
     
                 <p>
-                    <i>What is there to be known : </i> On Sunday 24 November 2019, at exactly 9.03am, the Bank of Lisbon in the historic city centre of Johannesburg is imploded in 8 seconds. A carefully orchestrated operation which takes a year to prepare. Surrounding buildings are evacuated. The base of the building has been lined with large tyres. That morning, the site resembles a stage set with monumental sails 25 meters high, strung across the entire city block to prevent damage to neighbouring buildings from any air blasts or ‘escaping’ debris. Fences block streets. Fire trucks and emergency vans are on standby.  Police cordon off the area and smalls crowds gather at a pre-scribed safe distance, in the ‘green zone’.  The building is charged with 2363 conventional mining explosives, nearly a ton. These are embedded into the building’s columns in exactly marked, predrilled holes - a structural, surgical procedure. Each column is wrapped several times with diamond-mesh fencing and layers of geotextile material which must absorb the shock and blast from detonation.  Design and sequence of the implosion follow the  strategic logic of demolition engineering: explosive-induced collapse. It calculates what forces need to be released at precisely what points for 31 storeys to fold progressively, to break up under gravity and deposit into the foundation ‘in the most compact form’. Impact cushions have been installed in the basement to minimise ground vibration. 
+                    <i>What is there to be known<sup>2</sup>:</i> On Sunday 24 November 2019, at exactly 9.03am, the Bank of Lisbon in the historic city centre of Johannesburg is imploded in 8 seconds. A carefully orchestrated operation which takes a year to prepare. Surrounding buildings are evacuated. The base of the building has been lined with large tyres. That morning, the site resembles a stage set with monumental sails 25 meters high, strung across the entire city block to prevent damage to neighbouring buildings from any air blasts or ‘escaping’ debris. Fences block streets. Fire trucks and emergency vans are on standby.  Police cordon off the area and smalls crowds gather at a pre-scribed safe distance, in the ‘green zone’.  The building is charged with 2363 conventional mining explosives, nearly a ton. These are embedded into the building’s columns in exactly marked, predrilled holes - a structural, surgical procedure. Each column is wrapped several times with diamond-mesh fencing and layers of geotextile material which must absorb the shock and blast from detonation.  Design and sequence of the implosion follow the  strategic logic of demolition engineering: explosive-induced collapse. It calculates what forces need to be released at precisely what points for 31 storeys to fold progressively, to break up under gravity and deposit into the foundation ‘in the most compact form’. Impact cushions have been installed in the basement to minimise ground vibration. <sup>3</sup>
                 </p>
     
                 <p>
-                    Elated anticipation is palpable that morning. The sirens start and the crowd grows very quiet. I first hear the building ignite, then see it drop. And yet do not know what I really saw. Dust clouds rise and expand with surprising velocity. Fine residue of built material quickly coats the streets, settles on cars and clothes, and enters lungs. In witnessing the implosion, a strangely symbolic, tense and spectacular event, what is undone? 
+                    Elated anticipation is palpable that morning. The sirens start and the crowd grows very quiet. I first hear the building ignite, then see it drop. And yet do not know what I really saw. Dust clouds rise and expand with surprising velocity. Fine residue of built material quickly coats the streets, settles on cars and clothes, and enters lungs. In witnessing the implosion, a strangely symbolic, tense and spectacular event, what is undone? <sup>4</sup>
                 </p>
     
                 <p>
@@ -100,19 +100,68 @@
                 </p>
     
                 <p>
-                    <i>I ask my friend about the Bank of Lisbon. </i>He worked here in the health department on AIDS awareness campaigns in the late 90s, early 2000s. He says, ‘the building didn't figure much compared to the media work we were doing’, effectively against AIDS denialism of the government at the time’.  Windows did not open, the lifts often did not work. The basement parking was ‘useful’ but ‘reeked of sewage’. After a pause he adds,<span>‘The MECs  occupied the 23rd floor, one of them marbled the entire floor. Maybe they liked skidding and sliding. The machinery of the air conditioning was on the 13th floor. A dusty and dirty floor, like being in the bag of a giant vacuum cleaner. It did pump warm and bad air throughout the building.’</span> He recalls scandals of misspent money in the health department. My question puts him into a bad mood, even though he remembers ‘good views to the west of the city, a purple haze hanging over Fordsburg and beyond’. And watching a solar eclipse in 2001, when it was one of the few tall buildings in the area that was not bricked up (including Luthuli House). 
+                    <i>I ask my friend about the Bank of Lisbon. </i>He worked here in the health department on AIDS awareness campaigns in the late 90s, early 2000s. He says, ‘the building didn't figure much compared to the media work we were doing’, effectively against AIDS denialism of the government at the time’.  Windows did not open, the lifts often did not work. The basement parking was ‘useful’ but ‘reeked of sewage’. After a pause he adds,<span class="quote">‘The MECs  occupied the 23rd floor, one of them marbled the entire floor. Maybe they liked skidding and sliding. The machinery of the air conditioning was on the 13th floor. A dusty and dirty floor, like being in the bag of a giant vacuum cleaner. It did pump warm and bad air throughout the building.’</span> He recalls scandals of misspent money in the health department. My question puts him into a bad mood, even though he remembers ‘good views to the west of the city, a purple haze hanging over Fordsburg and beyond’. And watching a solar eclipse in 2001, when it was one of the few tall buildings in the area that was not bricked up (including Luthuli House). 
                 </p>
     
                 <p>
-                    Later that day, he emails me about a painting he did at the time: <span>‘The shape, lower right, is one of the health directors screaming while wearing a neck brace; then there's the lift, a confinement in which one could sample the foetid breath of fellow workers; the somewhat crushed cars represent the aforementioned basement parking. The tall grey figure represents a man I worked with who had been tortured by the police, made to stand on a brick till inevitably he fell off, for which he was beaten. He felt compelled to share this with me. The rest is too obscure to go into. Fire and implosion was too good for that building.’</span> 
+                    Later that day, he emails me about a painting he did at the time: <span class="quote">‘The shape, lower right, is one of the health directors screaming while wearing a neck brace; then there's the lift, a confinement in which one could sample the foetid breath of fellow workers; the somewhat crushed cars represent the aforementioned basement parking. The tall grey figure represents a man I worked with who had been tortured by the police, made to stand on a brick till inevitably he fell off, for which he was beaten. He felt compelled to share this with me. The rest is too obscure to go into. Fire and implosion was too good for that building.’</span> 
+                </p>
+
+                <h2>record of fire</h2>
+
+                <p class="clear">
+                    <span class="highlight">
+                    ‘The 4th September, I left for work… On Friday we went to the scene.’ In a radio interview on 702 with Azania Mosaka, fireman Isaac Moleko Bereng recounts the traumatic sequence of the day that began in the morning with a call from the control room and ended in the death of his crew members, Simphiwe Moropane (28), Mduduzi Ndlovu(40) and Khathutshelo Muedi (37). 
+                    </span>
                 </p>
     
             </div>
         </div>
     </section>
 
-    <!-- Modal -->
-    <div class="modal fade" id="footnoteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- "I" ICON -->
+    <button id="info" type="button" class="btn btn-dark" data-toggle="modal" data-target="#moreInfoModal">
+        i
+    </button>
+    
+    <!-- Modal: abstract etc... -->
+    <div class="modal fade" id="moreInfoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">More Information About the Project</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <h1>Abstract</h1>
+                <p>
+                    What emerges or is withheld in the demolition of a building in the city centre at the end of November 2019? To this day, the cause of a fire at the Bank of Lisbon in September 2018, which lasted for 3 days and lead to its implosion, has not been disclosed publicly despite a series of legal investigations implicating provincial government departments, city offices and the Johannesburg Emergency Services. The Bank of Lisbon housed various departments, including the Department of Health, when it started to burn. On the first day of the fire, three firemen lost their lives as they got trapped on the 23rd floor. It emerged that fire hydrants in the building were dry. Grievous issues of occupational health and safety were ignored for years, despite repeated complaints by office workers and labour unions. At the time of the fire, the building should not have been occupied as it did not meet basic compliance standards.
+                </p>
+                <p>
+                    This contribution consists of three parts that evolve around the unfolding narrative: It begins with a video recording of the implosion, filmed from the evacuated student residency directly opposite the Bank of Lisbon. 4 continuous minutes have been edited from a static 2 hour take, which register the site, texture and sound of material dislocation, in which daylight is absorbed and only gradually releases a view. The video, a collaboration with Simon Gush and Andrei van Wyk, developed alongside a text that collates online information around the fire. The essay acts as a re-mediated, selective account of events, trauma and political forces at play, sourced mainly from available news reports and interviews. It circles around allegations of negligence, arson and the deferral of accountability by governing bodies. The attempt is to bring into relation data, actors, quantifications and measures, which do not conclude but approximate the preventable loss of 3 lives. The third part constitutes a sound piece by Andrei van Wyk, a re-composition of the cameras’ audio recordings that proposes a sonic meditation on the collapse of architecture, a search for a vertical movement through a now imagined space. Between these instances, which stand as independent moments and distinct collaborations in this research, is the attempt to think through Locard’s exchange principle, that ‘every contact leaves a trace’ ; to acknowledge the presence of each trace in the city’s nervous system, echoing towards an alternate, socially legitimate reality. 
+                </p>
+                <h1>Specs</h1>
+                <h4>Video: </h4>
+                <ul>
+                    <li><i>Bank of Lisbon, 24.11.2019</i></li>
+                    <li>Collaboration with Simon Gush and Andrei van Wyk</li>
+                    <li>HD video, stereo sound, 2019</li>
+                    <li>4mins, 8secs</li>
+                    <li>Camera and editing: Simon Gush</li>
+                    <li>Sound design: Andrei van Wyk </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Modal: footnotes -->
+    <div class="modal fade" id="footnoteModal" tabindex="-1" role="dialog" aria-labelledby="footnotemodal" aria-hidden="true">
         <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -121,7 +170,7 @@
                 <span aria-hidden="true">&times;</span>
             </button>
             </div>
-            <div class="modal-body">
+            <div class="footnote-content modal-body">
             ...
             </div>
         </div>
