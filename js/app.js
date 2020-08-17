@@ -108,8 +108,13 @@ const grow = () => {
 
 // have begin button appear once page has loaded
 window.addEventListener('load', () => {
-    startbtn.classList.remove('d-none');
-    loadingText.innerHTML = ". . .";
+    let check = setTimeout(() => {
+        if(video.duration){
+            startbtn.classList.remove('d-none');
+            loadingText.innerHTML = ". . .";
+            clearInterval(check)
+        }
+    }, 1000);
 })
 
 // start button triggers video
