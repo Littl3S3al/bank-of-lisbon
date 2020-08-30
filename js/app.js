@@ -25,7 +25,7 @@ const audio = document.querySelector('audio');
 let playing = false;
 
 const container = document.querySelector('#body');
-const paras = container.querySelectorAll('p');
+let blurred = document.querySelectorAll('.blurredDiv');
 
 
 
@@ -69,10 +69,10 @@ const reading = () => {
         time += 1;
         updateCounter();
         vertiLine.style.height = time * instance + "px";
-        if(time >= end){
-            clearInterval(countUp);
-            endInteraction();
-        }
+        // if(time >= end){
+        //     clearInterval(countUp);
+        //     endInteraction();
+        // }
     }, 15);
 
 };
@@ -83,13 +83,6 @@ const endInteraction = () => {
     document.body.style.background = 'yellow';
     document.body.classList.add('modal-open');
 }
-
-// add blur class to all paras
-paras.forEach(para => {
-    if(!para.classList.contains('clear')){
-        para.classList.add('blurredText');
-    }
-})
 
 // changing the width of the bar function
 const grow = () => {
@@ -145,19 +138,13 @@ audio.addEventListener('pause', () => {
 
 
 // unblur paras if you hover over them
-document.body.addEventListener('mouseover', (e) => {
-    if(e.target.tagName === "P"){
-        e.target.classList.remove('blurredText');
-    }
-    if(e.target.classList.contains('extrablurredDiv')){
-        e.target.classList.remove('extrablurredDiv');
-    }
-});
-
-// unblur audio if you hover over it
-audioContainer.addEventListener('mouseover', () => {
-    audioContainer.classList.remove('blurredDiv');
+blurred.forEach(div => {
+    div.addEventListener('mouseover', () => {
+        div.classList.remove('blurredDiv');
+        blurred = document.querySelectorAll('blurredDiv');
+    })
 })
+
 
 
 
