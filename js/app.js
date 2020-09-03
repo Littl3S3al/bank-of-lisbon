@@ -27,6 +27,8 @@ let playing = false;
 const container = document.querySelector('#body');
 let blurred = document.querySelectorAll('.blurredDiv');
 
+let progress;
+
 
 
 let time = 0;
@@ -38,7 +40,6 @@ const updateCounter = () => {
     counter.innerText = time;
 }
 
-
 // end video function
 const endVid = (interval) => {
     secVideo.classList.add('d-none');
@@ -46,13 +47,14 @@ const endVid = (interval) => {
     reading();
 }
 
-// video timer function
+// video timer function & closing of video
 const videoTimer = () => {
     let countdown = setInterval(() => {
-        let timer = (video.duration - video.currentTime).toFixed(2)*100;
+        let timer = Math.floor((video.duration - video.currentTime).toFixed(2));
         counter.innerText = timer;
         if(timer === 0 || testing || endNow){
             endVid(countdown);
+            audio.play();
         }
     }, 10);
 }
@@ -65,30 +67,34 @@ const reading = () => {
     time = 0;
     updateCounter();
     let instance = window.innerHeight/end;
+    let lineHeight;
     let countUp = setInterval(() => {
-        time += 1;
+        time ++;
+        lineHeight = time * instance * 100;
         updateCounter();
-        vertiLine.style.height = time * instance + "px";
-        // if(time >= end){
-        //     clearInterval(countUp);
-        //     endInteraction();
-        // }
-    }, 15);
+        vertiLine.style.height = lineHeight + "px";
+    }, 500);
+    let check = setInterval(() => {
+        if(lineHeight > window.innerHeight/2 && progress/100*window.innerWidth > window.innerWidth - 25){
+            clearInterval(countUp);
+            clearInterval(check);
+            endInteraction();
+        }
+    }, 1000);
 
 };
 
 
 // end interaction function
 const endInteraction = () => {
-    document.body.style.background = 'yellow';
-    document.body.classList.add('modal-open');
+    document.body.style.backgroundColor = '#E5E7E9';
 }
 
 // changing the width of the bar function
 const grow = () => {
     let wider = setInterval(() => {
         if(playing){
-            let progress = audio.currentTime/audio.duration*100;
+            progress = audio.currentTime/audio.duration*100;
             horiLine.style.width = progress + '%';
             
         } else{
@@ -123,6 +129,7 @@ startbtn.addEventListener('click', () => {
 skipBtn.addEventListener('click', () => {
     endNow = true;
     video.pause();
+    audio.play();
 })
 
 // hitting play on audio triggers line growing

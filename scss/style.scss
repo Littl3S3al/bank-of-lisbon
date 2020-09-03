@@ -1,16 +1,19 @@
 $pop: #D35400;
-$heading: grey;
-$higlight: #2980B9;
-
 
 // reset
+html{
+    max-width: 100vw;
+    overflow-x: hidden;
+}
 body{
     margin: 0;
     padding: 0;
     max-width: 100vw;
     overflow-x: hidden;
     font-family: 'PT Sans', sans-serif;
+    transition: background-color 0.5s ease;
 }
+
 h1, h2, p{
     transition: all 0.9s ease;
 }
@@ -76,12 +79,13 @@ video{
 // text
 section#body{
     margin-top: 40vh;
+    padding: 20px;
     h1{
         font-size: 4em;
         font-weight: 400;
     }
     p{
-        font-size: 1.5em;
+        font-size: 1em;
     }
     sup{
         cursor: pointer;
@@ -119,6 +123,7 @@ section#body{
     border-radius: 0 20px 0 0;
     border: 1px solid black;
     transition: all 0.9s ease;
+    z-index: 100;
 }
 
 
