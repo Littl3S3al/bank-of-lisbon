@@ -73,7 +73,7 @@ const reading = () => {
         lineHeight = time * instance * 100;
         updateCounter();
         vertiLine.style.height = lineHeight + "px";
-    }, 500);
+    }, 2500);
     let check = setInterval(() => {
         if(lineHeight > window.innerHeight/2 && progress/100*window.innerWidth > window.innerWidth - 25){
             clearInterval(countUp);
